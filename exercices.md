@@ -20,7 +20,3 @@ Pour utiliser cette méthode, il est nécessaire d’avoir un objet de type Rand
 Random rd = new Random();
 rd.nextInt(...);
 ```
-
-```
-
-```
