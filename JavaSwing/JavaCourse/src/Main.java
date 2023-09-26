@@ -1,21 +1,25 @@
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class Main {
 
     
     public static void main(String[] args) {
 
-        System.out.print("Hello and welcome!");
+        System.out.println("Hello and welcome!");
 
-        int popFr = 67000000;
-        double prctageFemme = 51.7;
+        // La classe LocalDate me donne acces a une serie de methodes
+        // qui me permet de manipuler des dates.
 
-        int b = 153;
+        LocalDate noel;
+        noel = LocalDate.of(2023, 12, 25);
 
+        System.out.println("Noel tombe un " + noel.getDayOfWeek());
 
-        float f = 10.1F;
+        LocalDateTime maintenant;
+        maintenant = LocalDateTime.now();
 
-        long l = 10123456789L;
-
-
+        LocalDate aujourdhui;
+        aujourdhui = LocalDate.from(maintenant);
     }
 }

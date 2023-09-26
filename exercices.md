@@ -1,3 +1,5 @@
+# Les variables et les types de données
+
 Exercice 1
 
 Créer un tableau de dix chaînes de caractères puis remplir ce tableau avec des adresses e-mail. Calculer ensuite, à partir des informations présentes dans le tableau, la part de marché de chacun des fournisseurs.
@@ -39,3 +41,31 @@ Exercice 4
 Ajouter au jeu de l’exercice 3 l’affichage du temps mis par l’utilisateur pour obtenir la bonne réponse.
 
 Indice : intéressez-vous aux classes OffsetTime et Duration.
+
+# Programmation Objet
+
+Exercice 1
+
+Créer une classe représentant un article d’un magasin de vente par correspondance. Un article est caractérisé par sa référence, sa désignation, son prix. Créer ensuite une méthode main permettant de tester le bon fonctionnement de la classe précédente.
+
+Exercice 2
+
+Ajouter les deux classes Livre et Dvd héritant de la classe Article.
+
+Un livre possède un numéro ISBN, contient un certain nombre de pages et a été écrit par un auteur, un DVD a une certaine durée et a été produit par un réalisateur.
+
+Ajouter les attributs nécessaires aux classes Livre et Dvd pour avoir le nom de l’auteur ou du réalisateur. Tester ensuite le fonctionnement de ces deux nouvelles classes.
+
+Exercice 3
+
+Modifier les classes Livre et Dvd pour avoir disponibles les informations suivantes concernant l’auteur ou le réalisateur :
+
+- son nom
+- son prénom
+- sa date de naissance
+
+Indice : les auteurs et les réalisateurs sont des personnes.
+
+Exercice 4
+
+Modifier le code précédent pour pouvoir obtenir rapidement la liste des articles concernant un auteur ou un réalisateur.
