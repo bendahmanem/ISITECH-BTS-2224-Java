@@ -27,7 +27,7 @@ public class Main {
             // == et != sont des opérateurs de comparaison
             // on peut combiner les epxressions booléennes avec les opérateurs logiques
             // && (et) || (ou) ! (non)
-        } while ( nb1 % 2 != 0 && nb2 % 2 != 0 && nb3 % 2 == 0 );
+        } while ( nb1 % 2 != 0 || nb2 % 2 != 0 || nb3 % 2 == 0 );
 
 
 
