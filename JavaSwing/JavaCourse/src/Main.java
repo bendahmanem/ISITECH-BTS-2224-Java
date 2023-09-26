@@ -1,51 +1,35 @@
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.util.Random;
 
 public class Main {
 
-    static String[] adressesMails;
-    static String[] listeFournisseurs;
-    static int nombreTotalClients;
-    static String[] getListeFournisseursDiff;
 
-    static int yahoo = 0;
-    static int gmail = 0;
-    static int hotmail = 0;
-    
+
     public static void main(String[] args) {
+        int nombreTentatives = 0;
+        int nb1, nb2, nb3;
+        Random random = new Random();
 
-        System.out.println("resultat" + 4.0 / 10.0 * 100.0);
+        // nous allons utiliser la boucle do while
+        // pour que le code s'execute au moins une fois
+        do {
+            nb1 = random.nextInt(1000);
+            nb2 = random.nextInt(1000);
+            nb3 = random.nextInt(1000);
 
-        // Initialisation du tableau des adresses mails
-        adressesMails = new String[10];
-        adressesMails[0] = "toto@gmail.com";
-        adressesMails[1] = "toto@gmail.com";
-        adressesMails[2] = "toto@gmail.com";
-        adressesMails[3] = "toto@gmail.com";
-        adressesMails[4] = "toto@yahoo.com";
-        adressesMails[5] = "toto@yahoo.com";
-        adressesMails[6] = "toto@hotmail.com";
-        adressesMails[7] = "toto@hotmail.com";
-        adressesMails[8] = "toto@hotmail.com";
-        adressesMails[9] = "toto@hotmail.com";
+            nombreTentatives++;
 
-        // On parcourt le tableau des adresses mails afin de recuperer la liste des fournisseurs
-        for (int i = 0; i < adressesMails.length; i++) {
-            // split est un tableau qui contiendra par exemple ["toto", "gmail.com"]
-            String[] split = adressesMails[i].split("@");
-            String fournisseur = split[1];
-            System.out.println(fournisseur);
+            System.out.println("Tentative n°" + nombreTentatives);
+            System.out.println("Valeur de nb1: " + nb1);
+            System.out.println("Valeur de nb2: " + nb2);
+            System.out.println("Valeur de nb3: " + nb3);
 
-            // On va comparer la veleur de fournisseur avec celle des fournisseurs connus
-            // et incrementer le compteur correspondant
-            if (fournisseur.equals("gmail.com")) {
-                gmail++;
-            } else if (fournisseur.equals("yahoo.com")) {
-                yahoo++;
-            } else if (fournisseur.equals("hotmail.com")) {
-                hotmail++;
-            }
-        }
+
+            // == et != sont des opérateurs de comparaison
+            // on peut combiner les epxressions booléennes avec les opérateurs logiques
+            // && (et) || (ou) ! (non)
+        } while ( nb1 % 2 != 0 && nb2 % 2 != 0 && nb3 % 2 == 0 );
+
+
 
     }
 }
