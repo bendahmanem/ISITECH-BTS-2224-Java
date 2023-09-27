@@ -69,3 +69,5 @@ Indice : les auteurs et les réalisateurs sont des personnes.
 Exercice 4
 
 Modifier le code précédent pour pouvoir obtenir rapidement la liste des articles concernant un auteur ou un réalisateur.
+
+Pour les personnes ajouter un champ de type ArrayList<Article> dans lequel on stockera chaque article concernant cette personne. (Livre ou dvd)
