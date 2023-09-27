@@ -16,7 +16,7 @@ public class Main {
         System.out.println("Veuillez entrer un nombre entre 0 et 1000");
         do {
             // recuperation de l'entree clavier
-            sc.nextInt();
+            nombreEntre = sc.nextInt();
             // incrementation du nombre d'essais
             nombreEssais++;
             // verification de la valeur entree
