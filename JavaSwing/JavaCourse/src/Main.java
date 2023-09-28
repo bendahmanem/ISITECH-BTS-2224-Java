@@ -3,63 +3,74 @@ import java.util.ArrayList;
 
 public class Main {
 
-            public static void main(String[] args) {
+    public static void main(String[] args) {
+    // LireFichier("test.txt");
+    LireFichier("/Users/mounirbendahmane/Programmation/Github/ISITECH/BTS-SIO-2022-2024/JAVA/JavaSwing/JavaCourse/src/test.txt");
+    lireFichier2("/Users/mounirbendahmane/Programmation/Github/ISITECH/BTS-SIO-2022-2024/JAVA/JavaSwing/JavaCourse/src/nombres.txt");
 
-/*
-    String nom = new String("Dupont");
-    ArrayList<Livre> liste = new ArrayList<Livre>();
+    }
 
-    ListeGenerique<Livre> listeGenerique = new ListeGenerique<Livre>(10);
-    Livre LordOfTheRings = new Livre("L1", "Lord of the Rings", 20.0, 123456789, new Personne("Tolkien", "J.R.R."), 100);
-    listeGenerique.ajout(LordOfTheRings);
-    int nombreDelivres = listeGenerique.getNbElements();
-    System.out.println(listeGenerique.getElement(0).getDesignation());
+    public static void LireFichier(String nom) {
+        FileInputStream fichier = null;
+        BufferedReader tampon = null;
+        String ligne = null;
 
-    Article a1 = new Article("A1", "Article 1", 10.0);
-    Personne jean = new Personne("Dupont", "Jean");
-    Livre l1 = new Livre("L1", "Livre 1", 20.0, 123456789, jean, 100);
-*/
-    InputStream inputStream = null;
+        try {
+            fichier = new FileInputStream(nom);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
 
-    try {
-        File file =  new File("C:\\Users\\julie\\Documents\\Cours\\Java\\TP\\TP2\\src\\articles.txt");
+        tampon = new BufferedReader(new InputStreamReader(fichier));
 
-        inputStream = new FileInputStream(file);
-    } catch (FileNotFoundException e) {
-        throw new RuntimeException(e);
-    } finally {
-        if (inputStream != null) {
+        try {
+            ligne = tampon.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+
+        while (ligne != null) {
+            System.out.println(ligne);
             try {
-                inputStream.close();
-            } catch (Exception e) {
+                ligne = tampon.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
                 throw new RuntimeException(e);
             }
         }
+
+
     }
 
-    }
+    public static void lireFichier2(String nom)
+    {
+        FileInputStream fichier = null;
+        BufferedReader br = null;
+        String ligne = null;
+        double somme = 0;
 
-            public static void LireFichier(String nom)
-            {
-                // Premier indice : representez le contenu du fichier ligne par ligne....
-
-                // FileinputStream vous permet de lire le fichier octet par octet... a partir du chemin du fichier...
-
-                // Deuxieme indice : utilisez un BufferedReader pour lire le fichier ligne par ligne
-                // ou
-                // Troisieme indice : utilisez un FileReader pour lire le fichier ligne par ligne
-
-
-
-
-                // Votre code ici
-                // BufferedReader
-                // FileInputStream
-                // InputStreamReader
-                // System.out.println
-                // FileReader
-                // File
+        try
+        {
+            fichier = new FileInputStream(nom);
+            br = new BufferedReader(new InputStreamReader(fichier));
+            ligne = br.readLine();
+            while (ligne != null) {
+                System.out.println(ligne);
+                ligne = br.readLine();
+                if (ligne != null)
+                {
+                    somme = somme + Double.parseDouble(ligne);
+                }
             }
+            System.out.println("total : " + somme);
+        }
+        catch (IOException | NumberFormatException e)
+        {
+            e.printStackTrace();
+        }
+    }
 }
 
 
