@@ -28,9 +28,11 @@ public class Ecran extends JFrame
 
 
         // création d'un listener
-
+        EcouteurCouleur listener = new EcouteurCouleur();
         // association du listener à chaque bouton
-
+        btnRouge.addActionListener(listener);
+        btnVert.addActionListener(listener);
+        btnBleu.addActionListener(listener);
         // Création du menu
         JMenuBar barreMenu;
         barreMenu=new JMenuBar();
@@ -44,7 +46,10 @@ public class Ecran extends JFrame
         mnuCouleurs.add(mnuRouge);
         mnuCouleurs.add(mnuVert);
         mnuCouleurs.add(mnuBleu);
-        // association du listener  à chaque menu
+        // association du listener  à chaque element du menu
+        mnuRouge.addActionListener(listener);
+        mnuVert.addActionListener(listener);
+        mnuBleu.addActionListener(listener);
         // (le même que pour les boutons)
 
 
@@ -76,9 +81,25 @@ public class Ecran extends JFrame
 
 
     // creation d'une classe interne qui implémente l'interface ActionListener
-    public class EcouteurCouleur
+    public class EcouteurCouleur implements ActionListener
     {
 
+        @Override
+        public void actionPerformed(ActionEvent actionEvent) {
+            if (actionEvent.getSource()==btnRouge || actionEvent.getSource()==mnuRouge)
+            {
+                pano.setBackground(Color.RED);
+            }
+            if (actionEvent.getSource()==btnVert || actionEvent.getSource()==mnuVert)
+            {
+                pano.setBackground(Color.GREEN);
+            }
+            if (actionEvent.getSource()==btnBleu || actionEvent.getSource()==mnuBleu)
+            {
+                pano.setBackground(Color.BLUE);
+            }
+            ;
+        }
     }
 
 }
